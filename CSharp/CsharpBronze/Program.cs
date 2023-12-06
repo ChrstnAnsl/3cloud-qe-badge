@@ -5,11 +5,10 @@ namespace CsharpBronze
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-
-
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            builder.Services.AddMemoryCache(); // Add this line to register the IMemoryCache service
 
             var app = builder.Build();
 
